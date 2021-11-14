@@ -1253,7 +1253,7 @@ contains
     pos = buffer_len + 1
     do while (n > 0_i2)
       pos = pos - 1
-      buffer(pos:pos) = numbers(mod(n, 10_i1))
+      buffer(pos:pos) = numbers(mod(n, 10_i2))
       n = n/10_i2
     end do
     if (val < 0_i2) then
@@ -1286,7 +1286,7 @@ contains
     pos = buffer_len + 1
     do while (n > 0_i4)
       pos = pos - 1
-      buffer(pos:pos) = numbers(mod(n, 10_i1))
+      buffer(pos:pos) = numbers(mod(n, 10_i4))
       n = n/10_i4
     end do
     if (val < 0_i4) then
@@ -1319,7 +1319,7 @@ contains
     pos = buffer_len + 1
     do while (n > 0_i8)
       pos = pos - 1
-      buffer(pos:pos) = numbers(mod(n, 10_i1))
+      buffer(pos:pos) = numbers(mod(n, 10_i8))
       n = n/10_i8
     end do
     if (val < 0_i8) then
