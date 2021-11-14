@@ -17,7 +17,7 @@ get_directory_property(is-subproject PARENT_DIRECTORY)
 project(
   "test-drive"
   LANGUAGES "Fortran"
-  VERSION "0.3.0"
+  VERSION "0.4.0"
   DESCRIPTION "The simple testing framework"
 )
 
@@ -55,6 +55,12 @@ target_include_directories(
   PUBLIC
   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${module-dir}>
+)
+target_compile_definitions(
+  "${PROJECT_NAME}-lib"
+  PRIVATE
+  "WITH_QP=$<BOOL:${WITH_QP}>"
+  "WITH_XDP=$<BOOL:${WITH_XDP}>"
 )
 
 # Export targets for other projects

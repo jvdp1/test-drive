@@ -1,12 +1,13 @@
 # The simple testing framework
 
 [![License](https://img.shields.io/badge/license-MIT%7CApache%202.0-blue)](LICENSE-Apache)
+[![Latest Version](https://img.shields.io/github/v/release/fortran-lang/test-drive)](https://github.com/fortran-lang/test-drive/releases/latest)
 [![CI](https://github.com/fortran-lang/test-drive/workflows/CI/badge.svg)](https://github.com/fortran-lang/test-drive/actions)
 [![codecov](https://codecov.io/gh/fortran-lang/test-drive/branch/main/graph/badge.svg)](https://codecov.io/gh/fortran-lang/test-drive)
 
 This project offers a lightweight, procedural unit testing framework based on nothing but standard Fortran.
 Integration with [meson](https://mesonbuild.com), [cmake](https://cmake.org) and [Fortran package manager (fpm)](https://github.com/fortran-lang/fpm) is available.
-Alternatively, the [``testdrive.f90``](src/testdrive.f90) source file can be redistributed in the project's testsuite as well.
+Alternatively, the [``testdrive.F90``](src/testdrive.F90) source file can be redistributed in the project's testsuite as well.
 
 
 ## Usage
