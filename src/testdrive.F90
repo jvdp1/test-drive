@@ -451,7 +451,9 @@ contains
     if (.not.test_skipped(error)) then
       if (allocated(error) .neqv. test%should_fail) stat = stat + 1
     end if
+    !$omp critical(testdrive_junit)
     call junit_push_test(junit, test, error, 0.0_sp)
+    !$omp end critical(testdrive_junit)
     call make_output(message, test, error)
     !$omp critical(testdrive_testsuite)
     write(unit, '(a)') message
@@ -618,7 +620,6 @@ contains
 
     if (.not.present(junit)) return
 
-    !$omp critical(testdrive_junit)
     junit%tests = junit%tests + 1
     junit%time = junit%time + time
 
@@ -672,7 +673,6 @@ contains
     junit%xml_block = &
       & junit%xml_block // &
       & '   </testcase>' // newline   
-    !$omp end critical(testdrive_junit)
 
   end subroutine junit_push_test
 
